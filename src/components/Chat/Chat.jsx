@@ -1,7 +1,11 @@
-import * as s from "./Chat.styled";
+import * as s from './Chat.styled';
 
 const Chat = () => {
-  return <s.Container></s.Container>;
+  return (
+    <s.Container>
+      <p>Chat page</p>
+    </s.Container>
+  );
 };
 
 export default Chat;
