@@ -2,10 +2,10 @@
 // import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // import { Context } from 'index';
 
-import * as s from './Login.styled';
+import * as s from './Main.styled';
 // import Button from 'components/Button';
 
-const Login = () => {
+const Main = () => {
   // const { auth } = useContext(Context);
 
   // const login = async () => {
@@ -18,10 +18,10 @@ const Login = () => {
 
   return (
     <s.Container>
-      <p>Login page</p>
+      <p>Main page</p>
       {/* <Button func={login} name="login" /> */}
     </s.Container>
   );
 };
 
-export default Login;
+export default Main;

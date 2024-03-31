@@ -1,9 +1,9 @@
 // import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 // import { selectIsLoggedIn, selectIsRefreshing } from '../redux/auth/selectors';
-import { useContext } from 'react';
-import { Context } from 'index';
-import { useAuthState } from 'react-firebase-hooks/auth';
+// import { useContext, useEffect } from 'react';
+// import { Context } from 'index';
+// import { useAuthState } from 'react-firebase-hooks/auth';
 
 // const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
 //   const { auth } = useContext(Context);
@@ -14,15 +14,19 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 //   // const shouldRedirect = !isLoggedIn && !isRefreshing;
 
 //   return user ? <Navigate to={redirectTo} /> : <Component />;
-// };
+
+import { auth } from './firebase';
 
 const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
-  const { auth } = useContext(Context);
-  const [user] = useAuthState(auth);
+  const user = auth.currentUser;
+  // const { auth } = useContext(Context);
+  // const [user] = useAuthState(auth);
 
-  // return user === null ? <Navigate to={redirectTo} /> : <Component />;
+  console.log([user]);
 
-  return user ? <Navigate to={redirectTo} /> : <Component />;
+  return user === null ? <Navigate to={redirectTo} /> : <Component />;
+
+  // return user ? <Navigate to={redirectTo} /> : <Component />;
 };
 
 export default PrivateRoute;
