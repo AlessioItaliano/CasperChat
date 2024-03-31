@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmessenger_app=self.webpackChunkmessenger_app||[]).push([[465],{465:(e,n,s)=>{s.r(n),s.d(n,{default:()=>c});var p,a=s(528);const t=s(197).Ay.div(p||(p=(0,a.A)(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  padding: 15px 75px;\n  width: 100%;\n  max-width: 767px;\n"])));var i=s(579);const c=()=>(0,i.jsx)(t,{children:(0,i.jsx)("p",{children:"Main page"})})}}]);
+//# sourceMappingURL=465.a148834a.chunk.js.map
