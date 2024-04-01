@@ -1,25 +1,31 @@
 // import { useContext } from 'react';
 // import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // import { Context } from 'index';
+import { TypeAnimation } from 'react-type-animation';
+import { NavLink } from 'react-router-dom';
 
+import Button from 'components/Button';
 import * as s from './Main.styled';
 // import Button from 'components/Button';
 
 const Main = () => {
-  // const { auth } = useContext(Context);
-
-  // const login = async () => {
-  //   const user = await signInWithPopup(auth, new GoogleAuthProvider());
-
-  //   // const provider = new auth.GoogleAuthProvider();
-  //   // const user = await auth.signInWithPopup(provider);
-  //   console.log(user);
-  // };
-
   return (
     <s.Container>
-      <p>Main page</p>
-      {/* <Button func={login} name="login" /> */}
+      <TypeAnimation
+        style={{ whiteSpace: 'pre-line', height: '57px', display: 'block' }}
+        sequence={[
+          `Greetings from the friendly Casper Chat!\nHere, everyone finds their place and trustworthy friends.\nJoin us and feel the warmth of our hearts!`,
+        ]}
+        speed={10}
+        repeat={Infinity}
+      />
+
+      <div>
+        <p>Get started:</p>
+        <NavLink to="/login">
+          <Button name="Log in" />
+        </NavLink>
+      </div>
     </s.Container>
   );
 };

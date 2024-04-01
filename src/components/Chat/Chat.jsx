@@ -15,7 +15,7 @@ import {
   serverTimestamp,
   collection,
 } from 'firebase/firestore';
-import { app, auth } from '../../firebase';
+import { app, auth } from '../../FirebaseConfig';
 
 import * as s from './Chat.styled';
 import Button from 'components/Button';

@@ -15,7 +15,7 @@ import { Navigate } from 'react-router-dom';
 
 //   return user ? <Navigate to={redirectTo} /> : <Component />;
 
-import { auth } from './firebase';
+import { auth } from './FirebaseConfig';
 
 const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
   const user = auth.currentUser;

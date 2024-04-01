@@ -17,7 +17,9 @@ import {
 //   // getDoc,
 //   // onSnapshot,
 // } from 'firebase/firestore';
-import { auth } from '../../firebase';
+import { auth } from '../../FirebaseConfig';
+
+import { IoLogoSnapchat } from 'react-icons/io';
 
 // const db = getFirestore(app);
 
@@ -52,8 +54,21 @@ const Header = () => {
 
   return (
     <s.Header>
+      <div>
+        <IoLogoSnapchat />
+        CasperCHAT
+      </div>
       <s.Container>
-        {user ? (
+        {user === null ? (
+          <s.Link to="/login">Enter</s.Link>
+        ) : (
+          <s.UserContainer>
+            <s.UserName>Welcome, {user.displayName}</s.UserName>
+            <Button func={signOut} name={'Logout'} type={'button'} />
+          </s.UserContainer>
+        )}
+
+        {/* {user ? (
           <>
             <p>Ciao, {user.displayName}</p>
             <Button name="Sign out" func={signOut} />
@@ -68,7 +83,7 @@ const Header = () => {
           <NavLink to="/">
             <Button name="Log in" func={logIn} />
           </NavLink>
-        )}
+        )} */}
       </s.Container>
     </s.Header>
   );

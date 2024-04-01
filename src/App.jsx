@@ -8,6 +8,7 @@ import Layout from 'components/Layout';
 // import Loader from 'components/Loader';
 
 const MainPage = lazy(() => import('components/Main'));
+const LoginPage = lazy(() => import('components/Login'));
 const ChatPage = lazy(() => import('components/Chat'));
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
         <Route index element={<MainPage />} />
         <Route
           path="login"
-          element={<RestrictedRoute redirectTo="/" component={MainPage} />}
+          element={<RestrictedRoute redirectTo="chat" component={LoginPage} />}
         />
         <Route
           path="chat"

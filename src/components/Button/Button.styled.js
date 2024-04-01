@@ -10,7 +10,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   border-radius: 5px;
-  border: none;
+  border: 1px solid black;
   background: lightgrey;
 
   color: black;

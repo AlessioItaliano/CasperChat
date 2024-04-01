@@ -12,7 +12,7 @@ import { Navigate } from 'react-router-dom';
 
 //   return !user ? <Navigate to={redirectTo} /> : <Component />;
 // };
-import { auth } from './firebase';
+import { auth } from './FirebaseConfig';
 
 const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
   // const { auth } = useContext(Context);
