@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import {
-  GoogleAuthProvider,
   signInWithPopup,
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   FacebookAuthProvider,
+  GithubAuthProvider,
 } from 'firebase/auth';
 
 import { auth } from '../../FirebaseConfig';
@@ -68,6 +69,19 @@ const Login = () => {
       setLoading(false);
     }
   };
+  const logInWithGitHub = async () => {
+    setLoading(true);
+    const provider = new GithubAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      setUser(user.displayName);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const signOut = () => {
     auth.signOut();
@@ -97,6 +111,7 @@ const Login = () => {
           <s.AccountsContainer>
             <Button name="Continue with Google" func={logInWithGoogle} />
             <Button name="Continue with Facebook" func={logInWithFacebook} />
+            <Button name="Continue with GitHub" func={logInWithGitHub} />
             <Button name="Log out" func={signOut} />
           </s.AccountsContainer>
         </>
