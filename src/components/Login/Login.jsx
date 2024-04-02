@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  // onAuthStateChanged,
+  createUserWithEmailAndPassword,
   FacebookAuthProvider,
 } from 'firebase/auth';
 
@@ -14,23 +14,31 @@ import * as s from './Login.styled';
 import Loader from 'components/Loader';
 
 const Login = () => {
-  // const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
   console.log(user);
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const form = e.currentTarget;
-    setUser(form.elements.email.value);
-    console.log(form.elements.email.value);
-    // dispatch(
-    //   login({
-    //     email: form.elements.email.value,
-    //     password: form.elements.password.value,
-    //   })
-    // );
-    form.reset();
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+    try {
+      setLoading(true);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      setUser(user.displayName || email);
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+      form.reset();
+    }
   };
 
   const logInWithGoogle = async () => {
@@ -51,14 +59,9 @@ const Login = () => {
     setLoading(true);
     const provider = new FacebookAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
-      if (result.user) {
-        const user = result.user;
-        setUser(user.displayName);
-        console.log(user);
-      } else {
-        console.log('Користувач не ідентифікований');
-      }
+      await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      setUser(user.displayName);
     } catch (error) {
       console.log(error);
     } finally {
