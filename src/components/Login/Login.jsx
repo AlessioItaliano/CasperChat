@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   GithubAuthProvider,
+  OAuthProvider,
 } from 'firebase/auth';
 
 import { auth } from '../../FirebaseConfig';
@@ -83,6 +84,20 @@ const Login = () => {
     }
   };
 
+  const logInWithApple = async () => {
+    setLoading(true);
+    const provider = new OAuthProvider('apple.com');
+    try {
+      await signInWithPopup(auth, provider);
+      const user = auth.currentUser;
+      setUser(user.displayName);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const signOut = () => {
     auth.signOut();
     setUser(null);
@@ -112,6 +127,7 @@ const Login = () => {
             <Button name="Continue with Google" func={logInWithGoogle} />
             <Button name="Continue with Facebook" func={logInWithFacebook} />
             <Button name="Continue with GitHub" func={logInWithGitHub} />
+            <Button name="Continue with Apple" func={logInWithApple} />
             <Button name="Log out" func={signOut} />
           </s.AccountsContainer>
         </>
