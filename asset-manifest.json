@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/messenger-app/static/css/main.e6c13ad2.css",
-    "main.js": "/messenger-app/static/js/main.52bbda14.js",
-    "static/js/53.f22151d3.chunk.js": "/messenger-app/static/js/53.f22151d3.chunk.js",
-    "static/js/544.3c1972f1.chunk.js": "/messenger-app/static/js/544.3c1972f1.chunk.js",
-    "static/js/620.45ed9732.chunk.js": "/messenger-app/static/js/620.45ed9732.chunk.js",
+    "main.css": "/messenger-app/static/css/main.d07202e3.css",
+    "main.js": "/messenger-app/static/js/main.316c5e58.js",
+    "static/js/53.3e809aef.chunk.js": "/messenger-app/static/js/53.3e809aef.chunk.js",
+    "static/js/544.3820011f.chunk.js": "/messenger-app/static/js/544.3820011f.chunk.js",
+    "static/js/620.e4538126.chunk.js": "/messenger-app/static/js/620.e4538126.chunk.js",
     "static/js/32.d7a246f4.chunk.js": "/messenger-app/static/js/32.d7a246f4.chunk.js",
     "index.html": "/messenger-app/index.html",
-    "main.e6c13ad2.css.map": "/messenger-app/static/css/main.e6c13ad2.css.map",
-    "main.52bbda14.js.map": "/messenger-app/static/js/main.52bbda14.js.map",
-    "53.f22151d3.chunk.js.map": "/messenger-app/static/js/53.f22151d3.chunk.js.map",
-    "544.3c1972f1.chunk.js.map": "/messenger-app/static/js/544.3c1972f1.chunk.js.map",
-    "620.45ed9732.chunk.js.map": "/messenger-app/static/js/620.45ed9732.chunk.js.map",
+    "main.d07202e3.css.map": "/messenger-app/static/css/main.d07202e3.css.map",
+    "main.316c5e58.js.map": "/messenger-app/static/js/main.316c5e58.js.map",
+    "53.3e809aef.chunk.js.map": "/messenger-app/static/js/53.3e809aef.chunk.js.map",
+    "544.3820011f.chunk.js.map": "/messenger-app/static/js/544.3820011f.chunk.js.map",
+    "620.e4538126.chunk.js.map": "/messenger-app/static/js/620.e4538126.chunk.js.map",
     "32.d7a246f4.chunk.js.map": "/messenger-app/static/js/32.d7a246f4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.52bbda14.js"
+    "static/css/main.d07202e3.css",
+    "static/js/main.316c5e58.js"
   ]
 }
