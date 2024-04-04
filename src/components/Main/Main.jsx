@@ -1,12 +1,10 @@
-// import { useContext } from 'react';
-// import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-// import { Context } from 'index';
 import { TypeAnimation } from 'react-type-animation';
 import { NavLink } from 'react-router-dom';
 
+// import Section from 'components/Section';
+// import Container from 'components/Container';
 import Button from 'components/Button';
 import * as s from './Main.styled';
-// import Button from 'components/Button';
 
 const Main = () => {
   return (
@@ -15,11 +13,10 @@ const Main = () => {
         style={{ whiteSpace: 'pre-line', height: '57px', display: 'block' }}
         sequence={[
           `Greetings from the friendly Casper Chat!\nHere, everyone finds their place and trustworthy friends.\nJoin us and feel the warmth of our hearts!`,
+          1000,
         ]}
-        speed={10}
-        repeat={Infinity}
+        repeat={0}
       />
-
       <div>
         <p>Get started:</p>
         <NavLink to="/login">

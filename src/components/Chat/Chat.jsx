@@ -1,8 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { Context } from 'index';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import { useCollectionData } from 'react-firebase-hooks/firestore';
-// import { serverTimestamp, doc, setDoc } from 'firebase/firestore';
 import {
   // doc,
   // setDoc,
@@ -19,36 +15,17 @@ import { app, auth } from '../../FirebaseConfig';
 
 import * as s from './Chat.styled';
 import Button from 'components/Button';
-// import { onAuthStateChanged } from 'firebase/auth';
+import Section from 'components/Section';
+import Container from 'components/Container';
 
 const db = getFirestore(app);
 
 const Chat = () => {
   const user = auth.currentUser;
-  // const { auth, firestore } = useContext(Context);
   console.log(user);
-  // const [user] = useAuthState(auth);
-  // const [messages, loading] = useCollectionData(
-  //   firestore.collection('messages').orderBy('createdAt')
-  // );
 
-  // const [inputValue, setInputValue] = useState('');
-  // const [user, setUser] = useState(null);
-  // console.log(user);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  // console.log(firestore);
-
-  // const sentMessage = async () => {
-  //   await addDoc(doc(db, 'messages'), {
-  //     uid: user.uid,
-  //     photoURL: user.photoURL,
-  //     displayName: user.displayName,
-  //     text: setNewMessages,
-  //     timestamp: serverTimestamp(),
-  //   });
-  //   setNewMessages('');
-  // };
 
   const sendMessage = async () => {
     await addDoc(collection(db, 'messages'), {
@@ -75,16 +52,6 @@ const Chat = () => {
     return unsubscribe;
   }, []);
 
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, user => {
-  //     if (user) {
-  //       setUser(user);
-  //     } else {
-  //       setUser(null);
-  //     }
-  //   });
-  // });
-
   useEffect(() => {
     const q = query(collection(db, 'messages'), orderBy('timestamp'));
     const unsubscribe = onSnapshot(q, snapshot => {
@@ -104,28 +71,35 @@ const Chat = () => {
   };
 
   return (
-    <s.Container>
-      <s.Chat>
-        <div>
-          {messages.map(msg => (
-            <s.ChatMessage key={msg.id} $ownMessage={msg.data.uid === user.uid}>
-              <s.Message $ownMessage={msg.data.uid === user.uid}>
-                <img src={msg.data.photoURL} alt="avatar_of_user" />
-                <p>{msg.data.displayName}</p>
-                {msg.data.text}
-              </s.Message>
-            </s.ChatMessage>
-          ))}
-        </div>
-      </s.Chat>
-      <s.Form onSubmit={handleSubmit}>
-        <s.Input
-          value={newMessage}
-          onChange={e => setNewMessage(e.target.value)}
-        />
-        <Button name="submit" />
-      </s.Form>
-    </s.Container>
+    <Section>
+      <Container>
+        <s.Container>
+          <s.Chat>
+            <div>
+              {messages.map(msg => (
+                <s.ChatMessage
+                  key={msg.id}
+                  $ownMessage={msg.data.uid === user.uid}
+                >
+                  <s.Message $ownMessage={msg.data.uid === user.uid}>
+                    <img src={msg.data.photoURL} alt="avatar_of_user" />
+                    <p>{msg.data.displayName}</p>
+                    {msg.data.text}
+                  </s.Message>
+                </s.ChatMessage>
+              ))}
+            </div>
+          </s.Chat>
+          <s.Form onSubmit={handleSubmit}>
+            <s.Input
+              value={newMessage}
+              onChange={e => setNewMessage(e.target.value)}
+            />
+            <Button name="submit" />
+          </s.Form>
+        </s.Container>
+      </Container>
+    </Section>
   );
 };
 

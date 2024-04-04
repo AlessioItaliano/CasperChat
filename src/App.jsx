@@ -18,11 +18,11 @@ const App = () => {
         <Route index element={<MainPage />} />
         <Route
           path="login"
-          element={<RestrictedRoute redirectTo="chat" component={LoginPage} />}
+          element={<RestrictedRoute redirectTo="/chat" component={LoginPage} />}
         />
         <Route
           path="chat"
-          element={<PrivateRoute redirectTo="/" component={ChatPage} />}
+          element={<PrivateRoute redirectTo="/login" component={ChatPage} />}
         />
 
         <Route path="*" element={<Navigate to="/" />} />

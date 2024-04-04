@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 40px;
 `;
@@ -49,8 +50,9 @@ export const Input = styled.input`
 
 export const AccountsContainer = styled.div`
   display: flex;
-  align-item: center;
   justify-content: center;
   flex-direction: column;
-  width: 300px;
+  gap: 5px;
+
+  max-width: 250px;
 `;

@@ -22,9 +22,9 @@ const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
   // const { auth } = useContext(Context);
   // const [user] = useAuthState(auth);
 
-  console.log([user]);
+  console.log(user);
 
-  return user === null ? <Navigate to={redirectTo} /> : <Component />;
+  return user !== null ? <Component /> : <Navigate to={redirectTo} />;
 
   // return user ? <Navigate to={redirectTo} /> : <Component />;
 };

@@ -19,9 +19,9 @@ const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
   // const [user] = useAuthState(auth);
   const user = auth.currentUser;
 
-  console.log([user]);
+  console.log(user);
 
-  return user !== null ? <Navigate to={redirectTo} /> : <Component />;
+  return user === null ? <Component /> : <Navigate to={redirectTo} />;
   // return !user ? <Navigate to={redirectTo} /> : <Component />;
 };
 
