@@ -5,8 +5,9 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 
-  padding: 15px 0;
+  // padding: 15px 0;
   width: 100%;
 `;
 
@@ -18,9 +19,18 @@ export const Chat = styled.div`
   overflow-y: auto;
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 500px;
+`;
 
-export const Input = styled.input``;
+export const Input = styled.input`
+  width: 100%;
+  height: auto;
+  padding: 10px;
+`;
 
 export const ChatMessage = styled.div`
   display: flex;
@@ -39,4 +49,25 @@ export const Message = styled.div`
     css`
       background-color: #dcf8c6;
     `}
+`;
+
+export const Box = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+export const Image = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+`;
+
+export const UserName = styled.h2`
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+export const Description = styled.p`
+  font-size: 14px;
 `;

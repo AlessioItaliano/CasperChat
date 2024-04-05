@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   // doc,
   // setDoc,
@@ -22,6 +22,7 @@ const db = getFirestore(app);
 
 const Chat = () => {
   const user = auth.currentUser;
+  const messagesEndRef = useRef(null);
   console.log(user);
 
   const [messages, setMessages] = useState([]);
@@ -40,6 +41,7 @@ const Chat = () => {
   };
 
   useEffect(() => {
+    if (!user) return; // Перевірка, чи користувача вже аутентифіковано
     const q = query(collection(db, 'messages'), orderBy('timestamp'));
     const unsubscribe = onSnapshot(q, snapshot => {
       setMessages(
@@ -48,9 +50,10 @@ const Chat = () => {
           data: doc.data(),
         }))
       );
+      scrollToBottom();
     });
     return unsubscribe;
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     const q = query(collection(db, 'messages'), orderBy('timestamp'));
@@ -61,6 +64,7 @@ const Chat = () => {
           data: doc.data(),
         }))
       );
+      scrollToBottom();
     });
     return unsubscribe;
   }, []);
@@ -70,21 +74,33 @@ const Chat = () => {
     sendMessage();
   };
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Section>
       <Container>
         <s.Container>
           <s.Chat>
             <div>
-              {messages.map(msg => (
+              {messages.map(message => (
                 <s.ChatMessage
-                  key={msg.id}
-                  $ownMessage={msg.data.uid === user.uid}
+                  key={message.id}
+                  $ownMessage={message.data.uid === user.uid}
                 >
-                  <s.Message $ownMessage={msg.data.uid === user.uid}>
-                    <img src={msg.data.photoURL} alt="avatar_of_user" />
-                    <p>{msg.data.displayName}</p>
-                    {msg.data.text}
+                  <s.Message
+                    $ownMessage={message.data.uid === user.uid}
+                    ref={messagesEndRef}
+                  >
+                    <s.Box>
+                      <s.Image
+                        src={message.data.photoURL}
+                        alt="avatar_of_user"
+                      />
+                      <s.UserName>{message.data.displayName}</s.UserName>
+                    </s.Box>
+                    <s.Description>{message.data.text}</s.Description>
                   </s.Message>
                 </s.ChatMessage>
               ))}
@@ -94,8 +110,9 @@ const Chat = () => {
             <s.Input
               value={newMessage}
               onChange={e => setNewMessage(e.target.value)}
+              placeholder="Insert your message here..."
             />
-            <Button name="submit" />
+            <Button name="SENT" />
           </s.Form>
         </s.Container>
       </Container>
