@@ -5,8 +5,6 @@ import { auth } from './FirebaseConfig';
 const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
   const user = auth.currentUser;
 
-  console.log(user);
-
   return user !== null ? <Component /> : <Navigate to={redirectTo} />;
 };
 

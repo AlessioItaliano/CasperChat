@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# CasperCHAt WEBSITE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Greetings and welcome on my news website!
 
-## Available Scripts
+![HeroSection](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/HeroSection.png)
 
-In the project directory, you can run:
+# About Website
 
-### `npm start`
+Ape NFT is a platform that showcases the concept and implements the core ideas
+of Ape NFTs. The website offers insights into the ideology behind Ape NFTs and
+demonstrates their fundamental principles. It provides answers to commonly asked
+questions and presents a collection of NFTs. Additionally, there is a form
+available for submitting and registering new members who share similar
+interests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The website is designed as a portfolio to convey the simplicity of purchasing
+and owning Ape NFTs to all interested parties. It is responsive and optimized
+for use on mobile devices, tablets, and desktops. The site features an
+accessible menu and links to the company's accounts on various platforms.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Sections of the website
 
-### `npm test`
+![AboutUs](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/AboutUsSection.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![MindMap](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/MindMapSection.png)
 
-### `npm run build`
+![FAQ](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/FAQSection.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Arts](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/ArtsSection.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Mint](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/MintSection.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# How to Run the Project
 
-### `npm run eject`
+Simply type in the [link](https://alessioitaliano.github.io/messenger-app/), and
+let the magic unfold.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ATTENTION YOU MUST PASTE YOUR .ENV FILE!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+REACT_APP_FIREBASE_API_KEY="Your API_KEY" REACT_APP_FIREBASE_AUTH_DOMAIN="Your
+AUTH_DOMAIN" REACT_APP_FIREBASE_PROJECT_ID="Your PROJECT_ID"
+REACT_APP_FIREBASE_STORAGE_BUCKET="Your STORAGE_BUCKET"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID="Your MESSAGING_SENDER_ID"
+REACT_APP_FIREBASE_APP_ID="Your APP_ID" REACT_APP_FIREBASE_MEASUREMENT_ID="Your
+MEASUREMENT_ID"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Lighthouse report
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![LighthouseReport](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/LighthouseReport.png)
 
-## Learn More
+The website demonstrates excellent performance metrics when tested on the
+Lighthouse report.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Used technologies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with
+[Create React App](https://github.com/facebook/create-react-app).
 
-### Code Splitting
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Support
 
-### Analyzing the Bundle Size
+If you have any questions, concerns or suggestions, feel free to get in touch
+with us. We're always here to help!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# About the Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This website was created by Vasyl Lepish  
+[Github](https://github.com/AlessioItaliano)
+[LinkedIn](https://www.linkedin.com/in/vasyl-lepish/)

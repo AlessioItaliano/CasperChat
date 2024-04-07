@@ -1,9 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import {
-  // doc,
-  // setDoc,
   addDoc,
-  // getDoc,
   orderBy,
   query,
   getFirestore,
@@ -23,7 +20,6 @@ const db = getFirestore(app);
 const Chat = () => {
   const user = auth.currentUser;
   const messagesEndRef = useRef(null);
-  console.log(user);
 
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
