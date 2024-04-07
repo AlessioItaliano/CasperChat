@@ -7,7 +7,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/messenger-app">
+    <BrowserRouter basename="/CasperChat">
       <App />
     </BrowserRouter>
   </React.StrictMode>

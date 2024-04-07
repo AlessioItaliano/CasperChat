@@ -32,7 +32,7 @@ accessible menu and links to the company's accounts on various platforms.
 
 # How to Run the Project
 
-Simply type in the [link](https://alessioitaliano.github.io/messenger-app/), and
+Simply type in the [link](https://github.com/AlessioItaliano/CasperChat), and
 let the magic unfold.
 
 ATTENTION YOU MUST PASTE YOUR .ENV FILE!
