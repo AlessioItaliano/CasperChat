@@ -41,7 +41,7 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    if (!user) return; // Перевірка, чи користувача вже аутентифіковано
+    if (!user) return;
     const q = query(collection(db, 'messages'), orderBy('timestamp'));
     const unsubscribe = onSnapshot(q, snapshot => {
       setMessages(
