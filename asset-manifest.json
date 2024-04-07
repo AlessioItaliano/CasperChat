@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/CasperChat/static/css/main.d07202e3.css",
-    "main.js": "/CasperChat/static/js/main.cd16fd79.js",
+    "main.js": "/CasperChat/static/js/main.c47c64e6.js",
     "static/js/53.3e809aef.chunk.js": "/CasperChat/static/js/53.3e809aef.chunk.js",
     "static/js/544.3820011f.chunk.js": "/CasperChat/static/js/544.3820011f.chunk.js",
     "static/js/620.68b41fda.chunk.js": "/CasperChat/static/js/620.68b41fda.chunk.js",
     "static/js/32.d7a246f4.chunk.js": "/CasperChat/static/js/32.d7a246f4.chunk.js",
     "index.html": "/CasperChat/index.html",
     "main.d07202e3.css.map": "/CasperChat/static/css/main.d07202e3.css.map",
-    "main.cd16fd79.js.map": "/CasperChat/static/js/main.cd16fd79.js.map",
+    "main.c47c64e6.js.map": "/CasperChat/static/js/main.c47c64e6.js.map",
     "53.3e809aef.chunk.js.map": "/CasperChat/static/js/53.3e809aef.chunk.js.map",
     "544.3820011f.chunk.js.map": "/CasperChat/static/js/544.3820011f.chunk.js.map",
     "620.68b41fda.chunk.js.map": "/CasperChat/static/js/620.68b41fda.chunk.js.map",
@@ -16,6 +16,6 @@
   },
   "entrypoints": [
     "static/css/main.d07202e3.css",
-    "static/js/main.cd16fd79.js"
+    "static/js/main.c47c64e6.js"
   ]
 }
