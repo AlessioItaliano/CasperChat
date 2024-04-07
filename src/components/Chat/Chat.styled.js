@@ -71,3 +71,27 @@ export const UserName = styled.h2`
 export const Description = styled.p`
   font-size: 14px;
 `;
+
+export const IconWrapper = styled.input`
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: auto;
+`;
+
+export const AddIconLabel = styled.label`
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+`;
+export const AddIconInput = styled.input`
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+`;

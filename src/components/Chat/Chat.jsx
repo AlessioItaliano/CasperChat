@@ -10,6 +10,8 @@ import {
 } from 'firebase/firestore';
 import { app, auth } from '../../FirebaseConfig';
 
+import { FaPaperclip } from 'react-icons/fa6';
+
 import * as s from './Chat.styled';
 import Button from 'components/Button';
 import Section from 'components/Section';
@@ -103,6 +105,11 @@ const Chat = () => {
             </div>
           </s.Chat>
           <s.Form onSubmit={handleSubmit}>
+            <s.AddIconInput type="file" id="paperclip" />
+            <s.AddIconLabel htmlFor="paperclip">
+              <FaPaperclip />
+            </s.AddIconLabel>
+
             <s.Input
               value={newMessage}
               onChange={e => setNewMessage(e.target.value)}

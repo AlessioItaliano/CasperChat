@@ -1,6 +1,6 @@
 # CasperCHAT WEBSITE
 
-Greetings and welcome on my news website!
+Greetings and welcome on my website!
 
 <!-- ![HeroSection](https://github.com/AlessioItaliano/ape-nft/blob/main/public/readme/HeroSection.png) -->
 
