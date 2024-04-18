@@ -11,9 +11,16 @@ import {
 import { auth, db, storage } from '../../FirebaseConfig';
 import { nanoid } from 'nanoid';
 import { FaPaperclip } from 'react-icons/fa6';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+} from 'firebase/storage';
 
 import { onAuthStateChanged } from 'firebase/auth';
+
+import { IoMdClose } from 'react-icons/io';
 
 import * as s from './Chat.styled';
 import Button from 'components/Button';
@@ -21,7 +28,6 @@ import Section from 'components/Section';
 import Container from 'components/Container';
 
 const Chat = () => {
-  // const user = auth.currentUser;
   const [user, setUser] = useState(null);
   const messagesEndRef = useRef(null);
   const [room, setRoom] = useState('');
@@ -31,15 +37,9 @@ const Chat = () => {
   const [newMessage, setNewMessage] = useState('');
   const [uploadDoc, setUploadDoc] = useState(null);
   const [imageList, setImageList] = useState('');
-
-  console.log(imageList);
-
-  useEffect(() => {
-    const storedRoom = localStorage.getItem('room');
-    if (storedRoom) {
-      setRoom(storedRoom);
-    }
-  }, []);
+  const [sendToChat, setSendToChat] = useState(false);
+  const [loadingImage, setLoadingImage] = useState(false);
+  const [preUploadFile, setPreUploadFile] = useState('');
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
@@ -87,11 +87,19 @@ const Chat = () => {
     return unsubscribe;
   }, [room]);
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    uploadFile();
+    if (newMessage.trim() === '') {
+      return;
+    }
+
+    await uploadFile();
     sendMessage();
+    setSendToChat(false);
+
+    setUploadDoc(null);
+    setImageList('');
   };
 
   const scrollToBottom = () => {
@@ -120,31 +128,45 @@ const Chat = () => {
     setRoom('');
   };
 
-  const uploadFile = () => {
+  useEffect(() => {
+    if (uploadDoc) {
+      uploadFile();
+    }
+  }, [uploadDoc]);
+
+  const uploadFile = async () => {
     if (uploadDoc == null) return;
+    setSendToChat(true);
+    setLoadingImage(true);
 
-    const imageRef = ref(
-      storage,
-      `images/room/${room}/${uploadDoc.name + nanoid()}`
-    );
+    const imageName = uploadDoc.name + nanoid();
+    setPreUploadFile(imageName);
 
-    uploadBytes(imageRef, uploadDoc).then(snapshot => {
-      console.log('Uploaded!');
-      getDownloadURL(snapshot.ref).then(url => setImageList(url));
-      setUploadDoc(null);
-    });
+    const imageRef = ref(storage, `images/room/${room}/${imageName}`);
+
+    await uploadBytes(imageRef, uploadDoc)
+      .then(snapshot => {
+        getDownloadURL(snapshot.ref).then(url => {
+          setImageList(url);
+          setLoadingImage(false);
+        });
+        // setUploadDoc(null);
+      })
+      .catch(error => {
+        console.error('Error uploading file:', error);
+        setLoadingImage(false);
+      });
+
+    setUploadDoc(null);
   };
 
-  // const roomImagesRef = ref(storage, `images/room/${room}`);
+  const deletePreLoadFile = () => {
+    setSendToChat(false);
 
-  // useEffect(() => {
-  //   listAll(roomImagesRef).then(res => {
-  //     console.log(res);
-  //     res.items.forEach(item => {
-  //       getDownloadURL(item).then(url => setImageList(prev => [...prev, url]));
-  //     });
-  //   });
-  // }, [imageList]);
+    setUploadDoc(null);
+    setImageList('');
+    deleteObject(ref(storage, `images/room/${room}/${preUploadFile}`));
+  };
 
   return (
     <Section>
@@ -196,17 +218,17 @@ const Chat = () => {
                           <s.UserName>{message.data.displayName}</s.UserName>
                         </s.Box>
                         <s.Description>{message.data.text}</s.Description>
-                        <s.DownloadFile
-                          src={message.data.file}
-                          alt="document_img"
-                        />
+
+                        {s.DownloadFile && message.data.file && (
+                          <s.DownloadFile
+                            src={message.data.file}
+                            alt="document_img"
+                          />
+                        )}
                       </s.Message>
                     </s.ChatMessage>
                   ))}
                 </div>
-                {/* {imageList.map(url => {
-                  return <img src={url} />;
-                })} */}
               </s.Chat>
               <s.Form onSubmit={handleSubmit}>
                 <s.AddIconInput
@@ -217,14 +239,29 @@ const Chat = () => {
                 <s.AddIconLabel htmlFor="paperclip">
                   <FaPaperclip />
                 </s.AddIconLabel>
-                {/* <Button func={uploadFile} name="temporal upload" /> */}
                 <s.Input
                   value={newMessage}
                   onChange={e => setNewMessage(e.target.value)}
                   placeholder="Insert your message here..."
                 />
-                <Button name="SENT" type="submit" />
+                <Button
+                  name="SENT"
+                  type="submit"
+                  disabled={uploadDoc !== null}
+                />
               </s.Form>
+              {sendToChat ? (
+                loadingImage ? (
+                  <p>Loading...</p>
+                ) : (
+                  <s.PreDownload>
+                    <s.DeleteIcon type="button" onClick={deletePreLoadFile}>
+                      <IoMdClose />
+                    </s.DeleteIcon>
+                    <s.DownloadFile src={imageList} alt="document_img" />
+                  </s.PreDownload>
+                )
+              ) : null}
             </s.Container>
           </>
         )}

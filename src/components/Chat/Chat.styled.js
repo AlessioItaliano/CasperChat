@@ -110,8 +110,39 @@ export const ButtonContainer = styled.div`
   gap: 10px;
 `;
 
+export const PreDownload = styled.div`
+  width: 250px;
+  height: 250px;
+
+  position: relative;
+`;
+
 export const DownloadFile = styled.img`
-  width: 150px;
-  height: 150px;
-  // border-radius: 50%;
+  width: 250px;
+  height: auto;
+`;
+
+export const DeleteIcon = styled.button`
+  // width: 25px;
+  height: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  border-radius: 50%;
+  border: none;
+  background-color: red;
+
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    color: white;
+    border: 0.5px solid white;
+  }
 `;

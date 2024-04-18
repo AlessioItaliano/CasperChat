@@ -23,4 +23,8 @@ export const Button = styled.button`
   &:active {
     color: red;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
