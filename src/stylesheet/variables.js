@@ -9,7 +9,8 @@ export const vars = {
   },
 
   background: {
-    bgMain: '#181818',
+    // bgMain: '#181818',
+    bgMain: '#fff',
     bgSecondary: '#DC3B5A',
   },
 

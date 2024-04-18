@@ -95,3 +95,23 @@ export const AddIconInput = styled.input`
   position: absolute;
   z-index: -1;
 `;
+
+export const ChoiseContainer = styled.div`
+  display: flex;
+  align-item: center;
+  justify-item: center;
+  flex-direction: column;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-item: center;
+  justify-item: center;
+  gap: 10px;
+`;
+
+export const DownloadFile = styled.img`
+  width: 150px;
+  height: 150px;
+  // border-radius: 50%;
+`;
