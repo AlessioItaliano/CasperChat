@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/CasperChat/static/css/main.d07202e3.css",
-    "main.js": "/CasperChat/static/js/main.5f87018c.js",
+    "main.js": "/CasperChat/static/js/main.a0effa24.js",
     "static/js/53.3e809aef.chunk.js": "/CasperChat/static/js/53.3e809aef.chunk.js",
-    "static/js/544.3820011f.chunk.js": "/CasperChat/static/js/544.3820011f.chunk.js",
-    "static/js/620.11f87b0e.chunk.js": "/CasperChat/static/js/620.11f87b0e.chunk.js",
-    "static/js/245.14875681.chunk.js": "/CasperChat/static/js/245.14875681.chunk.js",
+    "static/js/544.d4766a69.chunk.js": "/CasperChat/static/js/544.d4766a69.chunk.js",
+    "static/js/620.0f0912d4.chunk.js": "/CasperChat/static/js/620.0f0912d4.chunk.js",
+    "static/js/925.d9c9ee49.chunk.js": "/CasperChat/static/js/925.d9c9ee49.chunk.js",
     "index.html": "/CasperChat/index.html",
     "main.d07202e3.css.map": "/CasperChat/static/css/main.d07202e3.css.map",
-    "main.5f87018c.js.map": "/CasperChat/static/js/main.5f87018c.js.map",
+    "main.a0effa24.js.map": "/CasperChat/static/js/main.a0effa24.js.map",
     "53.3e809aef.chunk.js.map": "/CasperChat/static/js/53.3e809aef.chunk.js.map",
-    "544.3820011f.chunk.js.map": "/CasperChat/static/js/544.3820011f.chunk.js.map",
-    "620.11f87b0e.chunk.js.map": "/CasperChat/static/js/620.11f87b0e.chunk.js.map",
-    "245.14875681.chunk.js.map": "/CasperChat/static/js/245.14875681.chunk.js.map"
+    "544.d4766a69.chunk.js.map": "/CasperChat/static/js/544.d4766a69.chunk.js.map",
+    "620.0f0912d4.chunk.js.map": "/CasperChat/static/js/620.0f0912d4.chunk.js.map",
+    "925.d9c9ee49.chunk.js.map": "/CasperChat/static/js/925.d9c9ee49.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d07202e3.css",
-    "static/js/main.5f87018c.js"
+    "static/js/main.a0effa24.js"
   ]
 }
