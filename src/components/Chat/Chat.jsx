@@ -26,6 +26,7 @@ import * as s from './Chat.styled';
 import Button from 'components/Button';
 import Section from 'components/Section';
 import Container from 'components/Container';
+import ImageModal from 'components/ImageModal';
 
 const Chat = () => {
   const [user, setUser] = useState(null);
@@ -40,6 +41,8 @@ const Chat = () => {
   const [sendToChat, setSendToChat] = useState(false);
   const [loadingImage, setLoadingImage] = useState(false);
   const [preUploadFile, setPreUploadFile] = useState('');
+  const [shownModal, setShowModal] = useState(false);
+  const [modalPicture, setModalPicture] = useState('');
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
@@ -90,7 +93,7 @@ const Chat = () => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    if (newMessage.trim() === '') {
+    if (newMessage.trim() === '' && imageList === '') {
       return;
     }
 
@@ -168,6 +171,11 @@ const Chat = () => {
     deleteObject(ref(storage, `images/room/${room}/${preUploadFile}`));
   };
 
+  const onModal = imageUrl => {
+    setModalPicture(imageUrl);
+    setShowModal(prevShownModal => !prevShownModal);
+  };
+
   return (
     <Section>
       <Container>
@@ -223,6 +231,7 @@ const Chat = () => {
                           <s.DownloadFile
                             src={message.data.file}
                             alt="document_img"
+                            onClick={() => onModal(message.data.file)}
                           />
                         )}
                       </s.Message>
@@ -233,6 +242,7 @@ const Chat = () => {
               <s.Form onSubmit={handleSubmit}>
                 <s.AddIconInput
                   type="file"
+                  accept="image/*"
                   id="paperclip"
                   onChange={e => setUploadDoc(e.target.files[0])}
                 />
@@ -266,6 +276,7 @@ const Chat = () => {
           </>
         )}
       </Container>
+      {shownModal && <ImageModal onClose={onModal} picture={modalPicture} />}
     </Section>
   );
 };

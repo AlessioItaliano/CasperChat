@@ -1,17 +1,17 @@
 export const vars = {
   colors: {
-    blackText: '#1E1E1E',
-    whiteText: '#FFF',
-    redText: '#DC3B5A',
-
-    secondary: '#5A65F2',
-    placeholder: 'rgba(255, 255, 255, 0.24)',
+    black: '#000',
+    white: '#FFF',
+    lightBlue: '#DAE5FF',
+    mainText: '#5F718D',
+    secondaryText: '#222',
+    accent: '#2A63ED',
   },
 
   background: {
-    // bgMain: '#181818',
     bgMain: '#fff',
-    bgSecondary: '#DC3B5A',
+    bgSecondary: '#F5F9FF',
+    bgTertiary: '#E3EEFF',
   },
 
   breakpoints: {
