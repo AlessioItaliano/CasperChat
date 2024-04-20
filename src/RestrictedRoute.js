@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 
 import { Navigate } from 'react-router-dom';
-import Loader from 'components/Loader';
+
+import Loader from 'components/Common/Loader';
 
 import { auth } from './FirebaseConfig';
 

@@ -23,9 +23,9 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { IoMdClose } from 'react-icons/io';
 
 import * as s from './Chat.styled';
-import Button from 'components/Button';
-import Section from 'components/Section';
-import Container from 'components/Container';
+import Button from 'components/Common/Button';
+import Section from 'components/Base/Section';
+import Container from 'components/Base/Container';
 import ImageModal from 'components/ImageModal';
 
 const Chat = () => {
@@ -131,11 +131,11 @@ const Chat = () => {
     setRoom('');
   };
 
-  useEffect(() => {
-    if (uploadDoc) {
-      uploadFile();
-    }
-  }, [uploadDoc]);
+  // useEffect(() => {
+  //   if (uploadDoc) {
+  //     uploadFile();
+  //   }
+  // }, [uploadDoc]);
 
   const uploadFile = async () => {
     if (uploadDoc == null) return;

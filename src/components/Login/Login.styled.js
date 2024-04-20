@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-// import { variables } from 'stylesheet/variables';
-
 export const Container = styled.div`
   display: flex;
   justify-content: center;

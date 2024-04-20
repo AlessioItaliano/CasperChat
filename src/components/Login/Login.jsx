@@ -10,12 +10,12 @@ import {
 
 import { auth } from '../../FirebaseConfig';
 
-import Button from 'components/Button';
+import Button from 'components/Common/Button';
 
 import * as s from './Login.styled';
-import Loader from 'components/Loader';
-import Section from 'components/Section';
-import Container from 'components/Container';
+import Loader from 'components/Common/Loader';
+import Section from 'components/Base/Section';
+import Container from 'components/Base/Container';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);

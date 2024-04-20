@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { NavLink } from "react-router-dom";
 
-import { variables } from "stylesheet/variables";
+import { vars } from 'utils/variables';
 
 export const Header = styled.header`
   display: flex;

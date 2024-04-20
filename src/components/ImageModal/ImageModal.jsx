@@ -1,4 +1,4 @@
-import Modal from 'components/Modal';
+import Modal from 'components/Common/Modal';
 import * as s from './ImageModal.styled';
 
 const ImageModal = ({ onClose, picture }) => {

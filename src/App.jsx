@@ -4,17 +4,17 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import RestrictedRoute from './RestrictedRoute';
 
-import Layout from 'components/Layout';
+import Background from 'components/Base/Background';
 // import Loader from 'components/Loader';
 
-const MainPage = lazy(() => import('components/Main'));
+const MainPage = lazy(() => import('pages/Main'));
 const LoginPage = lazy(() => import('components/Login'));
 const ChatPage = lazy(() => import('components/Chat'));
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Background />}>
         <Route index element={<MainPage />} />
         <Route
           path="login"
