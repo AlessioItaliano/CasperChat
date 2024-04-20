@@ -7,6 +7,8 @@ export const vars = {
     mainText: '#5F718D',
     secondaryText: '#222',
     accent: '#0025FF',
+
+    backdrop: 'rgba(18, 20, 23, 0.2)',
   },
 
   background: {
