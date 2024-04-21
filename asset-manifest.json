@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/CasperChat/static/css/main.a580c269.css",
-    "main.js": "/CasperChat/static/js/main.a727f3e9.js",
-    "static/js/706.42df28fc.chunk.js": "/CasperChat/static/js/706.42df28fc.chunk.js",
+    "main.js": "/CasperChat/static/js/main.200d64ff.js",
+    "static/js/706.16173f24.chunk.js": "/CasperChat/static/js/706.16173f24.chunk.js",
     "static/js/544.b471698b.chunk.js": "/CasperChat/static/js/544.b471698b.chunk.js",
-    "static/js/424.7b163fdb.chunk.js": "/CasperChat/static/js/424.7b163fdb.chunk.js",
-    "static/js/925.d9c9ee49.chunk.js": "/CasperChat/static/js/925.d9c9ee49.chunk.js",
+    "static/js/809.b8c6aeeb.chunk.js": "/CasperChat/static/js/809.b8c6aeeb.chunk.js",
+    "static/js/457.a404852c.chunk.js": "/CasperChat/static/js/457.a404852c.chunk.js",
     "static/css/286.f5a933cd.chunk.css": "/CasperChat/static/css/286.f5a933cd.chunk.css",
     "static/media/contactUsMen.jpeg": "/CasperChat/static/media/contactUsMen.37356746c24ef949d335.jpeg",
     "static/media/team.png": "/CasperChat/static/media/team.5aca07a137378072b26d.png",
@@ -14,15 +14,15 @@
     "static/media/background.svg": "/CasperChat/static/media/background.f7a14608169fcbe8921afcc3460eb402.svg",
     "index.html": "/CasperChat/index.html",
     "main.a580c269.css.map": "/CasperChat/static/css/main.a580c269.css.map",
-    "main.a727f3e9.js.map": "/CasperChat/static/js/main.a727f3e9.js.map",
-    "706.42df28fc.chunk.js.map": "/CasperChat/static/js/706.42df28fc.chunk.js.map",
+    "main.200d64ff.js.map": "/CasperChat/static/js/main.200d64ff.js.map",
+    "706.16173f24.chunk.js.map": "/CasperChat/static/js/706.16173f24.chunk.js.map",
     "544.b471698b.chunk.js.map": "/CasperChat/static/js/544.b471698b.chunk.js.map",
-    "424.7b163fdb.chunk.js.map": "/CasperChat/static/js/424.7b163fdb.chunk.js.map",
-    "925.d9c9ee49.chunk.js.map": "/CasperChat/static/js/925.d9c9ee49.chunk.js.map",
+    "809.b8c6aeeb.chunk.js.map": "/CasperChat/static/js/809.b8c6aeeb.chunk.js.map",
+    "457.a404852c.chunk.js.map": "/CasperChat/static/js/457.a404852c.chunk.js.map",
     "286.f5a933cd.chunk.css.map": "/CasperChat/static/css/286.f5a933cd.chunk.css.map"
   },
   "entrypoints": [
     "static/css/main.a580c269.css",
-    "static/js/main.a727f3e9.js"
+    "static/js/main.200d64ff.js"
   ]
 }
