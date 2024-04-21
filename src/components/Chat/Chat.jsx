@@ -27,12 +27,13 @@ import Button from 'components/Common/Button';
 import Section from 'components/Base/Section';
 import Container from 'components/Base/Container';
 import ImageModal from 'components/ImageModal';
+import ChoiceChat from './ChoiceChat';
 
 const Chat = () => {
   const [user, setUser] = useState(null);
   const messagesEndRef = useRef(null);
   const [room, setRoom] = useState('');
-  const [roomNumber, setRoomNumber] = useState('');
+  // const [roomNumber, setRoomNumber] = useState('');
   const [copied, setCopied] = useState(false);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -57,6 +58,11 @@ const Chat = () => {
       }
     });
   }, []);
+
+  // useEffect(() => {
+  //   const storedRoom = localStorage.getItem('room');
+  //   setRoom(storedRoom);
+  // }, []);
 
   const sendMessage = async () => {
     await addDoc(collection(db, 'messages'), {
@@ -109,33 +115,38 @@ const Chat = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleCreateRoom = () => {
-    const newRoom = nanoid();
-    setRoom(newRoom);
-    localStorage.setItem('room', newRoom);
-  };
+  // const handleCreateRoom = () => {
+  //   const newRoom = nanoid();
+  //   setRoom(newRoom);
+  //   localStorage.setItem('room', newRoom);
+  // };
 
   const handleCopyRoomInvitation = async () => {
     await navigator.clipboard.writeText(room);
     setCopied(true);
   };
 
-  const goToRoom = e => {
-    e.preventDefault();
-    localStorage.setItem('room', roomNumber);
-    setRoom(roomNumber);
-  };
+  // const goToRoom = e => {
+  //   e.preventDefault();
+  //   localStorage.setItem('room', roomNumber);
+  //   setRoom(roomNumber);
+  // };
 
   const handleGoBack = () => {
     localStorage.removeItem('room');
     setRoom('');
   };
 
-  // useEffect(() => {
-  //   if (uploadDoc) {
-  //     uploadFile();
-  //   }
-  // }, [uploadDoc]);
+  useEffect(() => {
+    const handleUpload = () => {
+      if (uploadDoc) {
+        uploadFile();
+      }
+    };
+
+    handleUpload();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uploadDoc]);
 
   const uploadFile = async () => {
     if (uploadDoc == null) return;
@@ -176,24 +187,15 @@ const Chat = () => {
     setShowModal(prevShownModal => !prevShownModal);
   };
 
+  const handleSetRoom = selectedRoom => {
+    setRoom(selectedRoom);
+  };
+
   return (
     <Section>
       <Container>
         {!room ? (
-          <s.ChoiseContainer>
-            <p>Do you want create new room ?</p>
-            <Button func={handleCreateRoom} name="Create room" />
-            <p>Click here or you have invitation?</p>
-            <s.Form onClick={goToRoom}>
-              <s.Input
-                type="text"
-                value={roomNumber}
-                onChange={e => setRoomNumber(e.target.value)}
-                placeholder="Insert your invitation here..."
-              />
-              <Button name="Go to Room" type="submit" />
-            </s.Form>
-          </s.ChoiseContainer>
+          <ChoiceChat setRoom={handleSetRoom} user={user} />
         ) : (
           <>
             <s.Container>

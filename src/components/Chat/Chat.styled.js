@@ -96,7 +96,7 @@ export const AddIconInput = styled.input`
   z-index: -1;
 `;
 
-export const ChoiseContainer = styled.div`
+export const ChoiceContainer = styled.div`
   display: flex;
   align-item: center;
   justify-item: center;

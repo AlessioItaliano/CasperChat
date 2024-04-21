@@ -5,6 +5,7 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: ${props => (props.$size ? props.$size : null)};
 
   padding: 12px 45px;
 
@@ -12,7 +13,7 @@ export const Button = styled.button`
 
   border: none;
 
-  border-radius: 5px;
+  border-radius: 12px;
   background-color: ${vars.colors.darkBlue};
 
   color: ${vars.colors.white};

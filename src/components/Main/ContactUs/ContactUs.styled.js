@@ -47,7 +47,7 @@ export const Description = styled.div`
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.h2`
   color: ${vars.colors.white};
 
   font-size: 16px;
