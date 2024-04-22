@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/CasperChat/static/css/main.a580c269.css",
-    "main.js": "/CasperChat/static/js/main.80d19a25.js",
+    "main.js": "/CasperChat/static/js/main.ea653980.js",
     "static/js/706.16173f24.chunk.js": "/CasperChat/static/js/706.16173f24.chunk.js",
     "static/js/544.b471698b.chunk.js": "/CasperChat/static/js/544.b471698b.chunk.js",
-    "static/js/390.d448a0ca.chunk.js": "/CasperChat/static/js/390.d448a0ca.chunk.js",
+    "static/js/390.24d94251.chunk.js": "/CasperChat/static/js/390.24d94251.chunk.js",
     "static/js/457.a404852c.chunk.js": "/CasperChat/static/js/457.a404852c.chunk.js",
     "static/css/286.f5a933cd.chunk.css": "/CasperChat/static/css/286.f5a933cd.chunk.css",
     "static/media/contactUsMen.jpeg": "/CasperChat/static/media/contactUsMen.37356746c24ef949d335.jpeg",
@@ -14,15 +14,15 @@
     "static/media/background.svg": "/CasperChat/static/media/background.f7a14608169fcbe8921afcc3460eb402.svg",
     "index.html": "/CasperChat/index.html",
     "main.a580c269.css.map": "/CasperChat/static/css/main.a580c269.css.map",
-    "main.80d19a25.js.map": "/CasperChat/static/js/main.80d19a25.js.map",
+    "main.ea653980.js.map": "/CasperChat/static/js/main.ea653980.js.map",
     "706.16173f24.chunk.js.map": "/CasperChat/static/js/706.16173f24.chunk.js.map",
     "544.b471698b.chunk.js.map": "/CasperChat/static/js/544.b471698b.chunk.js.map",
-    "390.d448a0ca.chunk.js.map": "/CasperChat/static/js/390.d448a0ca.chunk.js.map",
+    "390.24d94251.chunk.js.map": "/CasperChat/static/js/390.24d94251.chunk.js.map",
     "457.a404852c.chunk.js.map": "/CasperChat/static/js/457.a404852c.chunk.js.map",
     "286.f5a933cd.chunk.css.map": "/CasperChat/static/css/286.f5a933cd.chunk.css.map"
   },
   "entrypoints": [
     "static/css/main.a580c269.css",
-    "static/js/main.80d19a25.js"
+    "static/js/main.ea653980.js"
   ]
 }
