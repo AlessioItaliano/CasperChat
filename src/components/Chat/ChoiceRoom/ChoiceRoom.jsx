@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { orderBy, query, onSnapshot, collection } from 'firebase/firestore';
+import {
+  orderBy,
+  query,
+  onSnapshot,
+  collection,
+  where,
+  getDocs,
+} from 'firebase/firestore';
 
 import { db } from 'FirebaseConfig';
 
@@ -50,12 +57,32 @@ const ChoiceRoom = ({ setRoom, user }) => {
     Notify.success('Welcome back!');
   };
 
-  const handleAcceptInvitationToRoom = e => {
+  const handleAcceptInvitationToRoom = async e => {
     e.preventDefault();
-    localStorage.setItem('room', roomNumber);
-    setRoom(roomNumber);
 
-    Notify.success('Welcome aboard!');
+    const roomExists = await checkRoomExists(roomNumber);
+
+    if (roomExists) {
+      localStorage.setItem('room', roomNumber);
+      setRoom(roomNumber);
+      Notify.success('Welcome aboard!');
+    } else {
+      Notify.failure('Room does not exist. Please enter a valid room number.');
+    }
+  };
+
+  const checkRoomExists = async roomNumber => {
+    try {
+      const q = query(
+        collection(db, 'messages'),
+        where('room', '==', roomNumber)
+      );
+      const roomSnapshot = await getDocs(q);
+      return !roomSnapshot.empty;
+    } catch (error) {
+      console.error('Error checking room existence:', error);
+      return false;
+    }
   };
 
   return (
