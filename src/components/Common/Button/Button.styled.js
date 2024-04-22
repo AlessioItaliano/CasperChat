@@ -14,7 +14,8 @@ export const Button = styled.button`
   border: none;
 
   border-radius: 12px;
-  background-color: ${vars.colors.darkBlue};
+  background-color: ${props =>
+    props.$btnType === 'remove' ? vars.colors.red : vars.colors.darkBlue};
 
   color: ${vars.colors.white};
 
@@ -26,7 +27,8 @@ export const Button = styled.button`
   &:focus,
   &:hover,
   &:active {
-    background-color: ${vars.colors.accent};
+    background-color: ${props =>
+      props.$btnType === 'remove' ? vars.colors.lightBlue : vars.colors.accent};
   }
 
   &:disabled {

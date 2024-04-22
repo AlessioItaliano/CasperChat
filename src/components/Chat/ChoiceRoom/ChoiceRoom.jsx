@@ -2,17 +2,17 @@ import { useState, useEffect } from 'react';
 
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
 import { orderBy, query, onSnapshot, collection } from 'firebase/firestore';
 
 import { db } from 'FirebaseConfig';
 
 import Button from 'components/Common/Button';
+import ChoiceRoomSelect from '../ChoiceRoomSelect';
 
-import * as s from './ChoiceChat.styled';
-import ChoiceChatSelect from '../ChoiceChatSelect';
+import * as s from './ChoiceRoom.styled';
+import Form from 'components/Common/Form';
 
-const ChoiceChat = ({ setRoom, user }) => {
+const ChoiceRoom = ({ setRoom, user }) => {
   const [roomNumber, setRoomNumber] = useState('');
   const [userRooms, setUserRooms] = useState('');
   const [selectedRoom, setSelectedRoom] = useState('');
@@ -44,8 +44,8 @@ const ChoiceChat = ({ setRoom, user }) => {
 
   const handleSelectRoom = selectedRoom => {
     setSelectedRoom(selectedRoom.value);
-    localStorage.setItem('room', selectedRoom);
-    setRoom(selectedRoom);
+    localStorage.setItem('room', selectedRoom.value);
+    setRoom(selectedRoom.value);
 
     Notify.success('Welcome back!');
   };
@@ -65,29 +65,29 @@ const ChoiceChat = ({ setRoom, user }) => {
         func={handleCreateRoom}
         name="Create room"
         type="button"
-        size={'340px'}
+        size={'291px'}
       />
 
       <s.Title>---------- or ---------</s.Title>
       <s.Title>You already have privet rooms?</s.Title>
-      <ChoiceChatSelect
+      <ChoiceRoomSelect
         options={userRooms}
         selectedRoom={selectedRoom}
         onSelectRoom={handleSelectRoom}
       />
+
       <s.Title>---------- or ---------</s.Title>
       <s.Title>You already have invitation?</s.Title>
-      <s.Form onClick={handleAcceptInvitationToRoom}>
-        <s.Input
-          type="text"
-          value={roomNumber}
-          onChange={e => setRoomNumber(e.target.value)}
-          placeholder="Insert your invitation here..."
-        />
-        <Button name="Join" type="submit" />
-      </s.Form>
+      <Form
+        onSubmit={handleAcceptInvitationToRoom}
+        inputValue={roomNumber}
+        onFormChange={e => setRoomNumber(e.target.value)}
+        formPlaceholder={'Insert your invitation here...'}
+        btnName={'Join'}
+        formSize={'291px'}
+      />
     </s.Container>
   );
 };
 
-export default ChoiceChat;
+export default ChoiceRoom;

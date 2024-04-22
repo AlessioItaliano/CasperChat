@@ -26,17 +26,3 @@ export const Title = styled.p`
   line-height: 1.62em;
   text-transform: uppercase;
 `;
-
-export const Form = styled.form`
-  display: flex;
-  gap: 5px;
-  align-items: center;
-`;
-
-export const Input = styled.input`
-  height: auto;
-  padding: 15px;
-  border-radius: 12px;
-  border: none;
-  width: 223px;
-`;

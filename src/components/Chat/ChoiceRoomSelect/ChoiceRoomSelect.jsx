@@ -13,7 +13,7 @@ const ChoiceChatSelect = ({ options, selectedRoom, onSelectRoom }) => {
           padding: '7px 15px',
           borderRadius: '12px',
           border: 'none',
-          width: '340px',
+          width: '291px',
         }),
         valueContainer: baseStyles => ({
           ...baseStyles,

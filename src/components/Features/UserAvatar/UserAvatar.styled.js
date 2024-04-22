@@ -11,7 +11,7 @@ export const Ellipse = styled.div`
   height: 32px;
   border-radius: 50%;
   border: none;
-  background-color: ${vars.colors.accent};
+  background-color: ${vars.colors.darkBlue};
 
   font-size: 14px;
   font-weight: 600;

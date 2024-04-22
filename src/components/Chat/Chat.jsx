@@ -8,33 +8,31 @@ import {
   collection,
   where,
 } from 'firebase/firestore';
-import { auth, db, storage } from '../../FirebaseConfig';
-import { nanoid } from 'nanoid';
-import { FaPaperclip } from 'react-icons/fa6';
 import {
   ref,
   uploadBytes,
   getDownloadURL,
   deleteObject,
 } from 'firebase/storage';
-
 import { onAuthStateChanged } from 'firebase/auth';
+import { auth, db, storage } from '../../FirebaseConfig';
+import { nanoid } from 'nanoid';
 
-import { IoMdClose } from 'react-icons/io';
-
-import * as s from './Chat.styled';
-import Button from 'components/Common/Button';
 import Section from 'components/Base/Section';
 import Container from 'components/Base/Container';
 import ImageModal from 'components/ImageModal';
-import ChoiceChat from './ChoiceChat';
+import ChoiceRoom from 'components/Chat/ChoiceRoom';
+import ChatField from 'components/Chat/ChatField';
+import ChatForm from 'components/Chat/ChatForm';
+import ChatPreLoadModal from 'components/Chat/ChatPreLoadModal';
+import ChatNavigation from 'components/Chat/ChatNavigation';
+
+import * as s from './Chat.styled';
 
 const Chat = () => {
   const [user, setUser] = useState(null);
   const messagesEndRef = useRef(null);
   const [room, setRoom] = useState('');
-  // const [roomNumber, setRoomNumber] = useState('');
-  const [copied, setCopied] = useState(false);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [uploadDoc, setUploadDoc] = useState(null);
@@ -58,11 +56,6 @@ const Chat = () => {
       }
     });
   }, []);
-
-  // useEffect(() => {
-  //   const storedRoom = localStorage.getItem('room');
-  //   setRoom(storedRoom);
-  // }, []);
 
   const sendMessage = async () => {
     await addDoc(collection(db, 'messages'), {
@@ -106,6 +99,7 @@ const Chat = () => {
     await uploadFile();
     sendMessage();
     setSendToChat(false);
+    setNewMessage('');
 
     setUploadDoc(null);
     setImageList('');
@@ -113,28 +107,6 @@ const Chat = () => {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // const handleCreateRoom = () => {
-  //   const newRoom = nanoid();
-  //   setRoom(newRoom);
-  //   localStorage.setItem('room', newRoom);
-  // };
-
-  const handleCopyRoomInvitation = async () => {
-    await navigator.clipboard.writeText(room);
-    setCopied(true);
-  };
-
-  // const goToRoom = e => {
-  //   e.preventDefault();
-  //   localStorage.setItem('room', roomNumber);
-  //   setRoom(roomNumber);
-  // };
-
-  const handleGoBack = () => {
-    localStorage.removeItem('room');
-    setRoom('');
   };
 
   useEffect(() => {
@@ -164,7 +136,6 @@ const Chat = () => {
           setImageList(url);
           setLoadingImage(false);
         });
-        // setUploadDoc(null);
       })
       .catch(error => {
         console.error('Error uploading file:', error);
@@ -174,7 +145,7 @@ const Chat = () => {
     setUploadDoc(null);
   };
 
-  const deletePreLoadFile = () => {
+  const deletePreLoad = () => {
     setSendToChat(false);
 
     setUploadDoc(null);
@@ -195,83 +166,39 @@ const Chat = () => {
     <Section>
       <Container>
         {!room ? (
-          <ChoiceChat setRoom={handleSetRoom} user={user} />
+          <ChoiceRoom setRoom={handleSetRoom} user={user} />
         ) : (
           <>
             <s.Container>
-              <s.ButtonContainer>
-                <Button
-                  name={copied ? 'Copied!' : 'Click here to copy invitation'}
-                  type="button"
-                  func={handleCopyRoomInvitation}
-                  // disabled={copied}
-                />
-                <Button func={handleGoBack} name="Return" type="button" />
-              </s.ButtonContainer>
+              <ChatNavigation room={room} setRoom={setRoom} />
 
-              <s.Chat>
-                <div>
-                  {messages.map(message => (
-                    <s.ChatMessage
-                      key={message.id}
-                      $ownMessage={message.data.uid === user.uid}
-                    >
-                      <s.Message
-                        $ownMessage={message.data.uid === user.uid}
-                        ref={messagesEndRef}
-                      >
-                        <s.Box>
-                          <s.Image
-                            src={message.data.photoURL}
-                            alt="avatar_of_user"
-                          />
-                          <s.UserName>{message.data.displayName}</s.UserName>
-                        </s.Box>
-                        <s.Description>{message.data.text}</s.Description>
-
-                        {s.DownloadFile && message.data.file && (
-                          <s.DownloadFile
-                            src={message.data.file}
-                            alt="document_img"
-                            onClick={() => onModal(message.data.file)}
-                          />
-                        )}
-                      </s.Message>
-                    </s.ChatMessage>
-                  ))}
-                </div>
-              </s.Chat>
-              <s.Form onSubmit={handleSubmit}>
-                <s.AddIconInput
-                  type="file"
-                  accept="image/*"
-                  id="paperclip"
-                  onChange={e => setUploadDoc(e.target.files[0])}
-                />
-                <s.AddIconLabel htmlFor="paperclip">
-                  <FaPaperclip />
-                </s.AddIconLabel>
-                <s.Input
-                  value={newMessage}
-                  onChange={e => setNewMessage(e.target.value)}
-                  placeholder="Insert your message here..."
-                />
-                <Button
-                  name="SENT"
-                  type="submit"
-                  disabled={uploadDoc !== null}
-                />
-              </s.Form>
+              <ChatField
+                messages={messages}
+                user={user}
+                messagesEndRef={messagesEndRef}
+                onModal={onModal}
+              />
+              <ChatForm
+                onSubmit={handleSubmit}
+                inputValue={newMessage}
+                onFormChange={e => setNewMessage(e.target.value)}
+                formPlaceholder={'Insert your message here...'}
+                btnName={'SENT'}
+                btnDisabled={uploadDoc !== null}
+                formSize={'500px'}
+                onAddIcon={e => setUploadDoc(e.target.files[0])}
+              />
               {sendToChat ? (
                 loadingImage ? (
                   <p>Loading...</p>
                 ) : (
-                  <s.PreDownload>
-                    <s.DeleteIcon type="button" onClick={deletePreLoadFile}>
-                      <IoMdClose />
-                    </s.DeleteIcon>
-                    <s.DownloadFile src={imageList} alt="document_img" />
-                  </s.PreDownload>
+                  <ChatPreLoadModal
+                    onClose={deletePreLoad}
+                    picture={imageList}
+                    btnRemoveName={'DELETE FILE'}
+                    btnSentName={'SENT'}
+                    onSubmit={handleSubmit}
+                  />
                 )
               ) : null}
             </s.Container>

@@ -13,21 +13,21 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: grey;
+  background-color: transparent;
 `;
 
 export const ModalField = styled.div`
   position: relative;
 
   width: calc(100% - 30px);
-  // max-width: 541px;
+  max-width: 541px;
   height: auto;
-  // max-height: calc(100vh - 30px);
+  max-height: calc(100vh - 30px);
 
   padding: 40px 20px 20px 20px;
   overflow-y: auto;
 
-  border-radius: 24px;
+  border-radius: 12px;
 
   background-color: ${vars.background.bgSecondary};
 `;
