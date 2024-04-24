@@ -7,7 +7,7 @@ import Form from 'components/Common/Form';
 
 const ChatForm = ({
   onSubmit,
-  inputValue,
+  formValue,
   onFormChange,
   formPlaceholder,
   btnName,
@@ -19,7 +19,7 @@ const ChatForm = ({
     <s.Wrapper>
       <Form
         onSubmit={onSubmit}
-        inputValue={inputValue}
+        formValue={formValue}
         onFormChange={onFormChange}
         formPlaceholder={formPlaceholder}
         btnName={btnName}

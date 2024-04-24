@@ -13,11 +13,11 @@ import {
 
 import { db } from 'FirebaseConfig';
 
+import Form from 'components/Common/Form';
 import Button from 'components/Common/Button';
-import ChoiceRoomSelect from '../ChoiceRoomSelect';
+import ChoiceRoomSelect from 'components/Choice/ChoiceRoomSelect';
 
 import * as s from './ChoiceRoom.styled';
-import Form from 'components/Common/Form';
 
 const ChoiceRoom = ({ setRoom, user }) => {
   const [roomNumber, setRoomNumber] = useState('');

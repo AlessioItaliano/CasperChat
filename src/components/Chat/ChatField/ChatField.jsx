@@ -1,4 +1,4 @@
-import ChatMessage from '../ChatMessage';
+import ChatMessage from 'components/Chat/ChatMessage';
 
 import * as s from './ChatField.styled';
 

@@ -9,7 +9,7 @@ import Background from 'components/Base/Background';
 
 const MainPage = lazy(() => import('pages/Main'));
 const LoginPage = lazy(() => import('components/Login'));
-const ChatPage = lazy(() => import('components/Chat'));
+const ChatPage = lazy(() => import('pages/Chat'));
 
 const App = () => {
   return (

@@ -1,15 +1,12 @@
-import { useRef } from 'react';
-
 import UserAvatar from 'components/Features/UserAvatar';
+import { formattedTimestamp } from 'helpers/formattedTimestamp';
 
 import * as s from './ChatMessage.styled';
 
-const ChatMessage = ({ message, user, onModal }) => {
-  const messagesEndRef = useRef(null);
-
+const ChatMessage = ({ message, user, onModal, messagesEndRef }) => {
   return (
-    <s.Message $ownMessage={message.data.uid === user.uid} ref={messagesEndRef}>
-      <s.UserMessage
+    <s.Wrapper $ownMessage={message.data.uid === user.uid}>
+      <s.Message
         $ownMessage={message.data.uid === user.uid}
         ref={messagesEndRef}
       >
@@ -26,8 +23,11 @@ const ChatMessage = ({ message, user, onModal }) => {
             onClick={() => onModal(message.data.file)}
           />
         )}
-      </s.UserMessage>
-    </s.Message>
+        <s.TimeContainer>
+          <s.Time>{formattedTimestamp(message.data.timestamp)}</s.Time>
+        </s.TimeContainer>
+      </s.Message>
+    </s.Wrapper>
   );
 };
 
