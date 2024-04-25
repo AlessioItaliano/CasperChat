@@ -1,15 +1,15 @@
-import FormLogin from 'components/Auth/Login/FormLogin';
+import FormRegister from 'components/Auth/Register/FormRegister';
 import Section from 'components/Base/Section';
 import Container from 'components/Base/Container';
 
-const Login = () => {
+const Register = () => {
   return (
     <Section>
       <Container>
-        <FormLogin />
+        <FormRegister />
       </Container>
     </Section>
   );
 };
 
-export default Login;
+export default Register;

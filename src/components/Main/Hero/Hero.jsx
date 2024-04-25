@@ -3,18 +3,20 @@ import { TypeAnimation } from 'react-type-animation';
 import { NavLink } from 'react-router-dom';
 import Button from 'components/Common/Button';
 import * as s from './Hero.styled';
-import { heroDescription, heroMessages } from 'data/mainText';
+import { heroMessages } from 'data/mainText';
 import heroMen from 'images/heroMen.png';
 import { vars } from 'utils/variables';
 import HeroMessage from '../HeroMessage';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <s.Section>
       <s.Background>
         <s.Container>
           <s.TitleContainer>
-            <s.Title>{heroDescription.title}</s.Title>
+            <s.Title>{t('heroTitle')}</s.Title>
             <TypeAnimation
               style={{
                 whiteSpace: 'pre-line',
@@ -25,11 +27,11 @@ const Hero = () => {
                 lineHeight: '1.62em',
                 color: `${vars.colors.mainText}`,
               }}
-              sequence={[`${heroDescription.description}`, 2000]}
+              sequence={[`${t('heroDescription')}`, 2000]}
               repeat={0}
             />
-            <NavLink to="/login">
-              <Button name="Let's start" />
+            <NavLink to="/register">
+              <Button name={t('button.start')} />
             </NavLink>
           </s.TitleContainer>
 

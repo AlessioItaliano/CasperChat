@@ -4,12 +4,30 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+import { englishText } from './locales/en.js';
+import { italianText } from './locales/it.js';
+import { ukrainianText } from './locales/ua.js';
+import { LOCALS } from './constants.js';
+
+const resources = {
+  [LOCALS.EN]: {
+    translation: englishText,
+  },
+  [LOCALS.UK]: {
+    translation: ukrainianText,
+  },
+  [LOCALS.IT]: {
+    translation: italianText,
+  },
+};
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    resources,
+    fallbackLng: LOCALS.EN,
     debug: true,
 
     interpolation: {

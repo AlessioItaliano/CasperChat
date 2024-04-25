@@ -1,11 +1,12 @@
+import { useTranslation } from 'react-i18next';
+
 import * as s from './Footer.styled';
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <s.Footer>
-      <s.CopyRight>
-        This website is created for informational and educational purposes.{' '}
-      </s.CopyRight>
+      <s.CopyRight>{t('footer')}</s.CopyRight>
       <s.CopyRight>
         Copyright © 2024 CasperCHAT. Created by{' '}
         <s.Link href="https://www.linkedin.com/in/vasyl-lepish/">

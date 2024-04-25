@@ -14,8 +14,6 @@ import Button from 'components/Common/Button';
 
 import * as s from './Login.styled';
 import Loader from 'components/Common/Loader';
-import Section from 'components/Base/Section';
-import Container from 'components/Base/Container';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -78,39 +76,32 @@ const Login = () => {
   };
 
   return (
-    <Section>
-      <Container>
-        <s.Container>
-          {loading ? (
-            <Loader />
-          ) : (
-            <>
-              <s.Title>Welcome back</s.Title>
-              <s.Form onSubmit={handleSubmit} autoComplete="on">
-                <s.Label>
-                  Email
-                  <s.Input type="email" name="email" autoComplete="on" />
-                </s.Label>
-                <s.Label>
-                  Password
-                  <s.Input type="password" name="password" autoComplete="on" />
-                </s.Label>
-                <Button type={'submit'} name={'Log In'} />
-              </s.Form>
-              <s.Title>----------------- or -----------------</s.Title>
-              <s.AccountsContainer>
-                <Button name="Continue with Google" func={logInWithGoogle} />
-                <Button
-                  name="Continue with Facebook"
-                  func={logInWithFacebook}
-                />
-                <Button name="Continue with GitHub" func={logInWithGitHub} />
-              </s.AccountsContainer>
-            </>
-          )}
-        </s.Container>
-      </Container>
-    </Section>
+    <s.Container>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <s.Title>Welcome back</s.Title>
+          <s.Form onSubmit={handleSubmit} autoComplete="on">
+            <s.Label>
+              Email
+              <s.Input type="email" name="email" autoComplete="on" />
+            </s.Label>
+            <s.Label>
+              Password
+              <s.Input type="password" name="password" autoComplete="on" />
+            </s.Label>
+            <Button type={'submit'} name={'Log In'} />
+          </s.Form>
+          <s.Title>----------------- or -----------------</s.Title>
+          <s.AccountsContainer>
+            <Button name="Continue with Google" func={logInWithGoogle} />
+            <Button name="Continue with Facebook" func={logInWithFacebook} />
+            <Button name="Continue with GitHub" func={logInWithGitHub} />
+          </s.AccountsContainer>
+        </>
+      )}
+    </s.Container>
   );
 };
 

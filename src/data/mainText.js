@@ -1,9 +1,3 @@
-export const heroDescription = {
-  title: 'Find your\ngateway to confidential conversations',
-  description:
-    'Stay connected in real-time with friends and colleagues.\nCreate secure private rooms or join existing ones.\nShare images seamlessly and enhance your messaging experience with Casper Chat.',
-};
-
 export const heroMessages = [
   {
     name: 'Smith Johnson',
@@ -36,12 +30,3 @@ export const heroMessages = [
     positionHorizontal: '80px',
   },
 ];
-
-export const aboutUs = {
-  description:
-    "We're a team of passionate developers, designers, and entrepreneurs at CasperChat who deeply recognize the importance of time and confidentiality. It's our mission to revolutionize the market, which is why we've embarked on the journey to create the first secure chat platform.",
-};
-
-export const contactUs = {
-  description: 'How would you love to contact us?',
-};

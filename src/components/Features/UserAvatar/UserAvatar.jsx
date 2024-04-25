@@ -1,6 +1,10 @@
 import * as s from './UserAvatar.styled';
 
 const UserAvatar = ({ user }) => {
+  if (!user || !user.displayName) {
+    return null;
+  }
+
   const firstLetter = user.displayName.slice(0, 1);
   const bigFirstLetter = firstLetter.toUpperCase();
   // const avatar = user.photoURL;

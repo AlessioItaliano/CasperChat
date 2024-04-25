@@ -29,7 +29,7 @@ export const Description = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 10px;
+  gap: 30px;
 
   width: 340px;
   height: auto;
@@ -53,7 +53,7 @@ export const Title = styled.h2`
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 3.12em;
+  // line-height: 3.12em;
   text-transform: uppercase;
 `;
 
