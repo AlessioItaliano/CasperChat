@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/CasperChat/static/css/main.a580c269.css",
-    "main.js": "/CasperChat/static/js/main.8ee59dc1.js",
-    "static/js/706.9fb7c682.chunk.js": "/CasperChat/static/js/706.9fb7c682.chunk.js",
-    "static/js/51.7b2b8d0a.chunk.js": "/CasperChat/static/js/51.7b2b8d0a.chunk.js",
-    "static/js/850.92ff23d8.chunk.js": "/CasperChat/static/js/850.92ff23d8.chunk.js",
-    "static/js/215.3d5090fd.chunk.js": "/CasperChat/static/js/215.3d5090fd.chunk.js",
+    "main.js": "/CasperChat/static/js/main.92c2ed1d.js",
+    "static/js/706.9868ff8d.chunk.js": "/CasperChat/static/js/706.9868ff8d.chunk.js",
+    "static/js/51.7a5b060c.chunk.js": "/CasperChat/static/js/51.7a5b060c.chunk.js",
+    "static/js/850.d144bcf6.chunk.js": "/CasperChat/static/js/850.d144bcf6.chunk.js",
+    "static/js/215.241ab9ee.chunk.js": "/CasperChat/static/js/215.241ab9ee.chunk.js",
     "static/js/13.38381a0f.chunk.js": "/CasperChat/static/js/13.38381a0f.chunk.js",
-    "static/js/925.d93de3f6.chunk.js": "/CasperChat/static/js/925.d93de3f6.chunk.js",
+    "static/js/665.87d5a229.chunk.js": "/CasperChat/static/js/665.87d5a229.chunk.js",
     "static/css/286.f5a933cd.chunk.css": "/CasperChat/static/css/286.f5a933cd.chunk.css",
     "static/media/contactUsMen.jpeg": "/CasperChat/static/media/contactUsMen.37356746c24ef949d335.jpeg",
     "static/media/team.png": "/CasperChat/static/media/team.5aca07a137378072b26d.png",
@@ -17,17 +17,17 @@
     "index.html": "/CasperChat/index.html",
     "static/media/getFetch.cjs": "/CasperChat/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
     "main.a580c269.css.map": "/CasperChat/static/css/main.a580c269.css.map",
-    "main.8ee59dc1.js.map": "/CasperChat/static/js/main.8ee59dc1.js.map",
-    "706.9fb7c682.chunk.js.map": "/CasperChat/static/js/706.9fb7c682.chunk.js.map",
-    "51.7b2b8d0a.chunk.js.map": "/CasperChat/static/js/51.7b2b8d0a.chunk.js.map",
-    "850.92ff23d8.chunk.js.map": "/CasperChat/static/js/850.92ff23d8.chunk.js.map",
-    "215.3d5090fd.chunk.js.map": "/CasperChat/static/js/215.3d5090fd.chunk.js.map",
+    "main.92c2ed1d.js.map": "/CasperChat/static/js/main.92c2ed1d.js.map",
+    "706.9868ff8d.chunk.js.map": "/CasperChat/static/js/706.9868ff8d.chunk.js.map",
+    "51.7a5b060c.chunk.js.map": "/CasperChat/static/js/51.7a5b060c.chunk.js.map",
+    "850.d144bcf6.chunk.js.map": "/CasperChat/static/js/850.d144bcf6.chunk.js.map",
+    "215.241ab9ee.chunk.js.map": "/CasperChat/static/js/215.241ab9ee.chunk.js.map",
     "13.38381a0f.chunk.js.map": "/CasperChat/static/js/13.38381a0f.chunk.js.map",
-    "925.d93de3f6.chunk.js.map": "/CasperChat/static/js/925.d93de3f6.chunk.js.map",
+    "665.87d5a229.chunk.js.map": "/CasperChat/static/js/665.87d5a229.chunk.js.map",
     "286.f5a933cd.chunk.css.map": "/CasperChat/static/css/286.f5a933cd.chunk.css.map"
   },
   "entrypoints": [
     "static/css/main.a580c269.css",
-    "static/js/main.8ee59dc1.js"
+    "static/js/main.92c2ed1d.js"
   ]
 }
