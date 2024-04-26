@@ -72,7 +72,7 @@ const FormRegister = () => {
             </s.Redirect>
             <Button type={'submit'} name={t('button.register')} />
           </s.Form>
-          <s.Title>----------------- or -----------------</s.Title>
+          <s.Title>---------- {t('or')} ---------</s.Title>
           <AccoutnsEnter setLoading={setLoading} />
         </>
       )}

@@ -6,11 +6,13 @@ import { vars } from 'utils/variables';
 export const Link = styled(NavLink)`
   font-size: 24px;
   font-weight: 600;
-  color: ${vars.colors.black};
+  color: ${props =>
+    props.theme === 'light' ? vars.colors.white : vars.colors.black};
 
   &:hover,
   &:focus {
-    color: ${vars.colors.accent};
+    color: ${props =>
+      props.theme === 'light' ? vars.colors.red : vars.colors.accent};
   }
 `;
 

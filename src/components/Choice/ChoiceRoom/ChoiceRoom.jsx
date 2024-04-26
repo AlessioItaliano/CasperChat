@@ -16,6 +16,7 @@ import { db } from 'FirebaseConfig';
 import Form from 'components/Common/Form';
 import Button from 'components/Common/Button';
 import ChoiceRoomSelect from 'components/Choice/ChoiceRoomSelect';
+import { useTranslation } from 'react-i18next';
 
 import * as s from './ChoiceRoom.styled';
 
@@ -23,19 +24,31 @@ const ChoiceRoom = ({ setRoom, user }) => {
   const [roomNumber, setRoomNumber] = useState('');
   const [userRooms, setUserRooms] = useState('');
   const [selectedRoom, setSelectedRoom] = useState('');
+  const { t } = useTranslation();
 
   useEffect(() => {
     const q = query(collection(db, 'messages'), orderBy('timestamp'));
 
     const unsubscribe = onSnapshot(q, snapshot => {
-      setUserRooms(
-        snapshot.docs
-          .filter(doc => doc.data().uid === user.uid)
-          .map((doc, index) => ({
-            value: doc.data().room,
-            label: `Room ${index + 1}`,
-          }))
+      const userRoomDocs = snapshot.docs.filter(
+        doc => doc.data().uid === user.uid
       );
+      const existingRooms = {};
+      const userRoomsData = userRoomDocs.reduce((acc, doc) => {
+        const roomValue = doc.data().room;
+
+        if (!existingRooms[roomValue]) {
+          existingRooms[roomValue] = true;
+
+          acc.push({
+            value: roomValue,
+            label: `Room ${acc.length + 1}`,
+          });
+        }
+        return acc;
+      }, []);
+
+      setUserRooms(userRoomsData);
     });
 
     return unsubscribe;
@@ -87,30 +100,31 @@ const ChoiceRoom = ({ setRoom, user }) => {
 
   return (
     <s.Container>
-      <s.Title>Do you want create new room ?</s.Title>
+      <s.Title>{t('createRoomTitle')}</s.Title>
       <Button
         func={handleCreateRoom}
-        name="Create room"
+        name={t('button.createRoom')}
         type="button"
         size={'291px'}
       />
 
-      <s.Title>---------- or ---------</s.Title>
-      <s.Title>You already have privet rooms?</s.Title>
+      <s.Title>---------- {t('or')} ---------</s.Title>
+      <s.Title>{t('selectRoomTitle')}</s.Title>
       <ChoiceRoomSelect
         options={userRooms}
         selectedRoom={selectedRoom}
         onSelectRoom={handleSelectRoom}
+        selectPlaceholder={t('selectFormPlaceholder')}
       />
 
-      <s.Title>---------- or ---------</s.Title>
-      <s.Title>You already have invitation?</s.Title>
+      <s.Title>---------- {t('or')} ---------</s.Title>
+      <s.Title>{t('joinRoomTitle')}</s.Title>
       <Form
         onSubmit={handleAcceptInvitationToRoom}
         inputValue={roomNumber}
         onFormChange={e => setRoomNumber(e.target.value)}
-        formPlaceholder={'Insert your invitation here...'}
-        btnName={'Join'}
+        formPlaceholder={t('joinFormPlaceholder')}
+        btnName={t('button.join')}
         formSize={'291px'}
       />
     </s.Container>

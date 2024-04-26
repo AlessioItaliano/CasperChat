@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 // import { vars } from 'utils/variables';
 
-export const Wrapper = styled.div`
-  position: relative;
-`;
-
 export const AddIcon = styled.div`
   position: absolute;
-  top: 17px;
-  right: 150px;
+  left: 10px;
 `;
 
 export const Label = styled.label`

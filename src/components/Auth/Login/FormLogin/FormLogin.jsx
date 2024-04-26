@@ -58,7 +58,7 @@ const FormLogin = () => {
             </s.Redirect>
             <Button type={'submit'} name={t('button.logIn')} />
           </s.Form>
-          <s.Title>----------------- or -----------------</s.Title>
+          <s.Title>---------- {t('or')} ---------</s.Title>
           <AccoutnsEnter setLoading={setLoading} />
         </>
       )}

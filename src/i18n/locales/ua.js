@@ -13,7 +13,7 @@ export const ukrainianText = {
     join: 'Приєднатися',
     clickToCopyInvitation: 'Клацніть тут, щоб скопіювати запрошення',
     return: 'Повернутися',
-    sent: 'Відправлено',
+    sent: 'Відправити',
     delete: 'Видалити файл',
   },
   welcome: 'Ласкаво просимо',
@@ -24,6 +24,7 @@ export const ukrainianText = {
   password: 'Пароль',
   register: 'Реєстрація',
   logIn: 'Увійти',
+  or: 'або',
 
   heroTitle: 'Відкривайте нові можливості та будьте на звʼязку',
   heroDescription:
@@ -41,4 +42,17 @@ export const ukrainianText = {
 
   logInTitle: 'Раді вас бачити',
   goToLoginPage: 'Вже маєте обліковий запис?',
+
+  createRoomTitle: 'Бажаєте створити нову кімнату?',
+
+  selectRoomTitle: 'У вас вже є приватні кімнати?',
+  selectFormPlaceholder: 'Оберіть',
+
+  joinRoomTitle: 'У вас вже є запрошення?',
+  joinFormPlaceholder: 'Вставте сюди ваше запрошення...',
+
+  chatCopied: 'Скопійовано!',
+  chatCopiedClicked: 'Скопіювати запрошення',
+
+  messageFormPlaceholder: 'Вставте своє повідомлення тут...',
 };

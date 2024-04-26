@@ -24,6 +24,7 @@ export const englishText = {
   password: 'Password',
   register: 'Register',
   logIn: 'Log in',
+  or: 'or',
 
   heroTitle: 'Find your\ngateway to confidential conversations',
   heroDescription:
@@ -41,4 +42,17 @@ export const englishText = {
 
   logInTitle: 'Welcome back',
   goToLoginPage: 'Already have an account,',
+
+  createRoomTitle: 'Do you want create new room ?',
+
+  selectRoomTitle: 'You already have private rooms?',
+  selectFormPlaceholder: 'Select',
+
+  joinRoomTitle: 'You already have invitation ?',
+  joinFormPlaceholder: 'Insert your invitation here...',
+
+  chatCopied: 'Copied!',
+  chatCopiedClicked: 'Click here to copy invitation',
+
+  messageFormPlaceholder: 'Insert your message here...',
 };

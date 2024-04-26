@@ -34,6 +34,7 @@ export const ModalField = styled.div`
 
 export const CloseButton = styled.button`
   position: absolute;
+  font-size: 24px;
   top: 16px;
   right: 16px;
 

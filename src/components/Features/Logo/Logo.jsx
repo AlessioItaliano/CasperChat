@@ -2,9 +2,9 @@ import { IoLogoSnapchat } from 'react-icons/io';
 
 import * as s from './Logo.styled';
 
-const Logo = () => {
+const Logo = ({ theme }) => {
   return (
-    <s.Link to="/" aria-label="Company logo">
+    <s.Link to="/" aria-label="Company logo" theme={theme}>
       <s.Container>
         <IoLogoSnapchat />
         CasperCHAT

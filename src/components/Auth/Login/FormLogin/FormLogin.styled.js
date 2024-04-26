@@ -18,7 +18,7 @@ export const Title = styled.h2`
   font-size: 24px;
   text-transform: uppercase;
 
-  color: black;
+  color: ${vars.colors.black};
 `;
 
 export const Form = styled.form`

@@ -66,6 +66,7 @@ export const UserName = styled.h2`
 
 export const Description = styled.p`
   font-size: 18px;
+  word-wrap: break-word;
 `;
 
 export const DownloadFile = styled.img`

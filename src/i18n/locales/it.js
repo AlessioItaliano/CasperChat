@@ -25,6 +25,7 @@ export const italianText = {
   password: 'Password',
   register: 'Registrati',
   logIn: 'Accedi',
+  or: 'o',
 
   heroTitle: 'Trova il tuo\nvarco alle conversazioni confidenziali',
   heroDescription:
@@ -42,4 +43,17 @@ export const italianText = {
 
   logInTitle: 'Bentornato',
   goToLoginPage: 'Già hai un account?',
+
+  createRoomTitle: 'Vuoi creare una nuova stanza?',
+
+  selectRoomTitle: 'Hai già stanze private?',
+  selectFormPlaceholder: 'Seleziona',
+
+  joinRoomTitle: 'Hai già un invito?',
+  joinFormPlaceholder: 'Inserisci qui il tuo invito...',
+
+  chatCopied: 'Copiato!',
+  chatCopiedClicked: "Fare clic qui per copiare l'invito",
+
+  messageFormPlaceholder: 'Inserisci il tuo messaggio qui...',
 };

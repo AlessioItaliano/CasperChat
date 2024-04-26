@@ -12,15 +12,17 @@ const ChatPreLoadModal = ({
 }) => {
   return (
     <Modal onClose={onClose}>
-      <s.Image src={picture} alt="preLoad_img" />
       <s.Container>
-        <Button
-          type={'button'}
-          name={btnRemoveName}
-          func={onClose}
-          btnType={'remove'}
-        />
-        <Button type={'button'} name={btnSentName} func={onSubmit} />
+        <s.Image src={picture} alt="preLoad_img" />
+        <s.ButtonsContainer>
+          <Button
+            type={'button'}
+            name={btnRemoveName}
+            func={onClose}
+            btnType={'remove'}
+          />
+          <Button type={'button'} name={btnSentName} func={onSubmit} />
+        </s.ButtonsContainer>
       </s.Container>
     </Modal>
   );

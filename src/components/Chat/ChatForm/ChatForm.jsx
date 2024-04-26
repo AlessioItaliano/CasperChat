@@ -14,18 +14,19 @@ const ChatForm = ({
   btnDisabled,
   formSize,
   onAddIcon,
+  paddingLeft,
 }) => {
   return (
-    <s.Wrapper>
-      <Form
-        onSubmit={onSubmit}
-        formValue={formValue}
-        onFormChange={onFormChange}
-        formPlaceholder={formPlaceholder}
-        btnName={btnName}
-        btnDisabled={btnDisabled}
-        formSize={formSize}
-      />
+    <Form
+      onSubmit={onSubmit}
+      formValue={formValue}
+      onFormChange={onFormChange}
+      formPlaceholder={formPlaceholder}
+      btnName={btnName}
+      btnDisabled={btnDisabled}
+      formSize={formSize}
+      paddingLeft={paddingLeft}
+    >
       <s.AddIcon>
         <s.Input
           type="file"
@@ -37,7 +38,7 @@ const ChatForm = ({
           <FaPaperclip />
         </s.Label>
       </s.AddIcon>
-    </s.Wrapper>
+    </Form>
   );
 };
 

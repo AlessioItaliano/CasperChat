@@ -1,11 +1,17 @@
 import Select from 'react-select';
 
-const ChoiceChatSelect = ({ options, selectedRoom, onSelectRoom }) => {
+const ChoiceChatSelect = ({
+  options,
+  selectedRoom,
+  selectPlaceholder,
+  onSelectRoom,
+}) => {
   return (
     <Select
       options={options}
       value={selectedRoom}
       onChange={onSelectRoom}
+      placeholder={selectPlaceholder}
       styles={{
         control: baseStyles => ({
           ...baseStyles,

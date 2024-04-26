@@ -16,7 +16,9 @@ import {
 } from 'firebase/storage';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, db, storage } from 'FirebaseConfig';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { nanoid } from 'nanoid';
+import { useTranslation } from 'react-i18next';
 
 import Section from 'components/Base/Section';
 import Container from 'components/Base/Container';
@@ -27,8 +29,9 @@ import ChatPreLoadModal from 'components/Chat/ChatPreLoadModal';
 import Loader from 'components/Common/Loader';
 
 const Chat = () => {
-  const [user, setUser] = useState(null);
   const messagesEndRef = useRef(null);
+  const { t } = useTranslation();
+  const [user, setUser] = useState(null);
   const [room, setRoom] = useState('');
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -151,7 +154,7 @@ const Chat = () => {
         });
       })
       .catch(error => {
-        console.error('Error uploading file:', error);
+        Notify.failure('Error uploading file');
         setLoadingImage(false);
       });
 
@@ -182,11 +185,12 @@ const Chat = () => {
             onSubmit={handleSubmit}
             formValue={newMessage}
             onFormChange={e => setNewMessage(e.target.value)}
-            formPlaceholder={'Insert your message here...'}
-            btnName={'SENT'}
+            formPlaceholder={t('messageFormPlaceholder')}
+            btnName={t('button.sent')}
             btnDisabled={uploadDoc !== null}
             formSize={'500px'}
             onAddIcon={e => setUploadDoc(e.target.files[0])}
+            paddingLeft={'35px'}
           />
         )}
       </Container>
@@ -197,8 +201,8 @@ const Chat = () => {
           <ChatPreLoadModal
             onClose={deletePreLoad}
             picture={imageList}
-            btnRemoveName={'DELETE FILE'}
-            btnSentName={'SENT'}
+            btnRemoveName={t('button.delete')}
+            btnSentName={t('button.sent')}
             onSubmit={handleSubmit}
           />
         )

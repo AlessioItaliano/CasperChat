@@ -10,6 +10,8 @@ const Form = ({
   btnName,
   btnDisabled,
   formSize,
+  children,
+  paddingLeft,
 }) => {
   return (
     <s.Form onSubmit={onSubmit} $formSize={formSize}>
@@ -17,7 +19,9 @@ const Form = ({
         value={formValue}
         onChange={onFormChange}
         placeholder={formPlaceholder}
+        $paddingLeft={paddingLeft}
       />
+      {children}
       <Button name={btnName} type="submit" disabled={btnDisabled} />
     </s.Form>
   );

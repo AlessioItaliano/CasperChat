@@ -1,18 +1,34 @@
 import styled from 'styled-components';
+
 import { vars } from 'utils/variables';
 
 export const Footer = styled.footer`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 30px;
 
-  padding: 10px 20px;
+  padding: 20px;
 
   margin-right: auto;
   margin-left: auto;
 
   background: ${vars.colors.accent};
+`;
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+export const CopyRightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CopyRight = styled.p`
@@ -23,5 +39,5 @@ export const CopyRight = styled.p`
 
 export const Link = styled.a`
   text-decoration: underline;
-  color: ${vars.colors.lightBlue};
+  color: ${vars.colors.black};
 `;

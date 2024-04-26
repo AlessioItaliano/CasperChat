@@ -5,12 +5,6 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // left: 0;
-  // z-index: 100;
-
   height: 90px;
   width: 1280px;
 
@@ -35,6 +29,5 @@ export const UserContainer = styled.div`
 `;
 
 export const UserName = styled.p`
-  // font-size: 16px;
   font-weight: 700;
 `;

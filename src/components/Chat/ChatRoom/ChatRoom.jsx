@@ -19,6 +19,7 @@ const ChatRoom = ({
   btnDisabled,
   formSize,
   onAddIcon,
+  paddingLeft,
 }) => {
   return (
     <s.Container>
@@ -38,6 +39,7 @@ const ChatRoom = ({
         btnDisabled={btnDisabled}
         formSize={formSize}
         onAddIcon={onAddIcon}
+        paddingLeft={paddingLeft}
       />
     </s.Container>
   );
