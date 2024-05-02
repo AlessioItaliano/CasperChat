@@ -1,8 +1,8 @@
 export const ukrainianText = {
   button: {
     start: 'Почати',
-    sentEmail: 'Напишіть нам',
-    callUs: 'Зателефонуйте нам',
+    sentEmail: 'Написати',
+    callUs: 'Зателефонувати',
     logIn: 'Увійти',
     register: 'Зареєструватися',
     logOut: 'Вийти',

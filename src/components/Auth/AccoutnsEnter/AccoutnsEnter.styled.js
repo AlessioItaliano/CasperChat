@@ -8,6 +8,7 @@ export const Container = styled.div`
 
   max-width: 250px;
 `;
+
 export const Title = styled.h2`
   text-align: center;
   font-weight: 700;

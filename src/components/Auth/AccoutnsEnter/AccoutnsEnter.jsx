@@ -16,7 +16,6 @@ import Button from 'components/Common/Button';
 import * as s from './AccoutnsEnter.styled';
 
 const AccoutnsEnter = ({ setLoading }) => {
-  //   const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -55,6 +54,7 @@ const AccoutnsEnter = ({ setLoading }) => {
       Notify.success('Cool, you enter with GitHub account');
       navigate('/chat');
     } catch (error) {
+      console.log(error);
       Notify.failure('Oops, something go wrong. Try later');
     } finally {
       setLoading(false);
